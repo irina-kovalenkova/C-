@@ -1,0 +1,15 @@
+D:\GeekBrains\CSharp\lections\lec1\bin\Debug\net6.0\lec1.exe
+D:\GeekBrains\CSharp\lections\lec1\bin\Debug\net6.0\lec1.deps.json
+D:\GeekBrains\CSharp\lections\lec1\bin\Debug\net6.0\lec1.runtimeconfig.json
+D:\GeekBrains\CSharp\lections\lec1\bin\Debug\net6.0\lec1.dll
+D:\GeekBrains\CSharp\lections\lec1\bin\Debug\net6.0\lec1.pdb
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.csproj.AssemblyReference.cache
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.AssemblyInfoInputs.cache
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.AssemblyInfo.cs
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.csproj.CoreCompileInputs.cache
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.dll
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\refint\lec1.dll
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.pdb
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\lec1.genruntimeconfig.cache
+D:\GeekBrains\CSharp\lections\lec1\obj\Debug\net6.0\ref\lec1.dll

@@ -50,9 +50,7 @@ Console.WriteLine(max);
 /*
 Console.Write("Input number: ");
 int number = Convert.ToInt32(Console.ReadLine());
-
 int a = number%2;
-
 if(a==0)
 {
     Console.WriteLine("да");
@@ -62,6 +60,22 @@ else
 Console.WriteLine("нет");
 }
 */
+
+//Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+/*
+5 -> 2, 4
+8 -> 2, 4, 6, 8 */
+
+//Решение:
+
+Console.WriteLine("Input number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int current = 2;
+while(current <= number)
+{
+    Console.Write(current + " ");
+    current = current + 2;
+}
 
 
 

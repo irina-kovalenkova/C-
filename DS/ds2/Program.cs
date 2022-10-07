@@ -32,13 +32,13 @@ Console.WriteLine("The number in the middle :" + secondDigitNumber);
 32679 -> 6
 */
 
-int number = 98;
+/*int number = 987654;
 int SecondDigitNumber(int num)
 {
     int result;
 
     
-    int ed = num / 1000;
+    int ed = num % 10;
     result = ed;
    
        return result;
@@ -47,12 +47,18 @@ int SecondDigitNumber(int num)
 //int number = Convert.ToInt32(Console.ReadLine());
 
 int secondDigitNumber = SecondDigitNumber(number);
-Console.WriteLine("The number in the middle :" + secondDigitNumber);
+Console.WriteLine("The number in the middle :" + secondDigitNumber);*/
 
+/*
+int str = 987;
 
+int str = Convert.ToString();
+Console.WriteLine(str[2]);
 
+//int str1 = str % 1;
+//Console.WriteLine(str1);
 
-
+*/
 
 
 /*
@@ -63,3 +69,45 @@ Console.WriteLine("The number in the middle :" + secondDigitNumber);
 1 -> нет
 */
 
+/*
+//string WeekendNumber (int num)
+//{
+int num = 7;                 //Convert.ToInt32(Console.ReadLine()); 
+//Console.Write("Input number: ");
+
+string result;
+if(num == 1 || num == 2 || num == 3 || num == 4 || num ==5)
+{
+    result = "No";
+}
+else
+{
+    result = "Yes";
+}
+//return result;
+//}
+
+
+//string res = WeekendNumber(num);
+Console.WriteLine(result);
+*/
+
+bool IsDayAHoliday(int day)
+{
+    bool result;
+    if (day == 6 ^ day == 7)
+        result = true;
+    else
+        result = false;
+    
+    return result;
+}
+Console.Write("Input a number of the day of the week: ");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+bool isDayAHoliday = IsDayAHoliday(dayNumber);
+if (isDayAHoliday)
+    Console.WriteLine($"Yes, the {dayNumber} day of the week is a holiday! :)");
+else
+    Console.WriteLine($"No, the {dayNumber} day of the week is not a holiday! :(");
+
+//AlexandrYodaXD/HomeWorks

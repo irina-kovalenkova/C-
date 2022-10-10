@@ -69,29 +69,34 @@ Console.WriteLine(str[2]);
 1 -> нет
 */
 
-/*
-//string WeekendNumber (int num)
-//{
-int num = 7;                 //Convert.ToInt32(Console.ReadLine()); 
-//Console.Write("Input number: ");
-
-string result;
+bool WeekendNumber (int num)
+{
+bool result;
 if(num == 1 || num == 2 || num == 3 || num == 4 || num ==5)
 {
-    result = "No";
+    result = false;
 }
 else
 {
-    result = "Yes";
+    result = true;
 }
-//return result;
-//}
+return result;
+}
+Console.Write("Enter the number of the day of the week: ");
+int num = Convert.ToInt32(Console.ReadLine());
+bool weekendNumber = WeekendNumber(num);
+if (weekendNumber)
+Console.WriteLine("Today is a day off");
+else
+Console.WriteLine("Today is a working day");
+
+
 
 
 //string res = WeekendNumber(num);
-Console.WriteLine(result);
-*/
+//Console.WriteLine(result);
 
+/*
 bool IsDayAHoliday(int day)
 {
     bool result;
@@ -111,3 +116,4 @@ else
     Console.WriteLine($"No, the {dayNumber} day of the week is not a holiday! :(");
 
 //AlexandrYodaXD/HomeWorks
+*/

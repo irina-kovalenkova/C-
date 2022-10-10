@@ -32,34 +32,42 @@ Console.WriteLine("The number in the middle :" + secondDigitNumber);
 32679 -> 6
 */
 
-/*int number = 987654;
+//int num = 987654;
+
+/*
 int SecondDigitNumber(int num)
 {
     int result;
-
-    
+   
     int ed = num % 10;
     result = ed;
    
        return result;
 }
-//Console.Write("Enter a three-digit number: ");
-//int number = Convert.ToInt32(Console.ReadLine());
-
+Console.Write("Enter a three-digit number: ");
+int number = Convert.ToInt32(Console.ReadLine());
 int secondDigitNumber = SecondDigitNumber(number);
-Console.WriteLine("The number in the middle :" + secondDigitNumber);*/
 
+if (number < 999)
+Console.WriteLine("The number in the middle :" + secondDigitNumber);
+
+else
+
+Console.WriteLine("нет третьей цифры");
+
+*/
 /*
-int str = 987;
 
-int str = Convert.ToString();
+
+string str = 987;
+
 Console.WriteLine(str[2]);
 
 //int str1 = str % 1;
 //Console.WriteLine(str1);
 
-*/
 
+*/
 
 /*
 Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
@@ -68,7 +76,7 @@ Console.WriteLine(str[2]);
 7 -> да
 1 -> нет
 */
-
+/*
 bool WeekendNumber (int num)
 {
 bool result;
@@ -90,30 +98,40 @@ Console.WriteLine("Today is a day off");
 else
 Console.WriteLine("Today is a working day");
 
+*/
 
 
 
-//string res = WeekendNumber(num);
-//Console.WriteLine(result);
+//AlexandrYodaXD/HomeWorks
 
-/*
-bool IsDayAHoliday(int day)
+
+// Задача 13 (вариант 2): Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+string TreeDigitNumber(int num)
 {
-    bool result;
-    if (day == 6 ^ day == 7)
-        result = true;
+    string result;
+    string numberDigit = Convert.ToString(num);
+    if (numberDigit.Length < 3)
+        result = "There is no third digit";
     else
-        result = false;
+    {
+        char thirdDigit = numberDigit[2];
+        result = $"The third digit is {thirdDigit}";
+    }
     
     return result;
 }
-Console.Write("Input a number of the day of the week: ");
-int dayNumber = Convert.ToInt32(Console.ReadLine());
-bool isDayAHoliday = IsDayAHoliday(dayNumber);
-if (isDayAHoliday)
-    Console.WriteLine($"Yes, the {dayNumber} day of the week is a holiday! :)");
-else
-    Console.WriteLine($"No, the {dayNumber} day of the week is not a holiday! :(");
+Console.Write("Input number: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+string treeDigitNumber = TreeDigitNumber(number1);
+Console.WriteLine(treeDigitNumber);
 
-//AlexandrYodaXD/HomeWorks
+
+
+/*
+Console.Write("Input number: ");
+
+string str = Convert.ToString(x);
+char x = str[2];
+Console.Write(x);
 */

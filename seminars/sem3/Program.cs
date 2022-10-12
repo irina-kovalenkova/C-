@@ -49,7 +49,7 @@ FindRange(quart);
 /*
 double Dictance(double xa, double xb, double ya, double yb)
 {
-    return Math.Sqrt(Math.Pow((xb - xa), 2)* Math.Pow((yb - ya),2));
+    return Math.Sqrt(Math.Pow((xb - xa), 2)+ Math.Pow((yb - ya),2));
 }
 Console.Write("Input xa - coordinate: ");
 double xa = Convert.ToDouble(Console.ReadLine());

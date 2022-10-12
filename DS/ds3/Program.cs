@@ -12,7 +12,7 @@
 
 
 
-bool Polindrom (int num)
+
 
 
 

@@ -10,14 +10,32 @@
 23432 -> да
 */
 
+//Решение:
+/*
+string TreeDigitNumber(int num)
+{
+    string result;
+    string numberDigit = Convert.ToString(num);
 
+    char oneDigit = numberDigit[0];
+    char fiveDigit = numberDigit[4];
+    char twoDigit = numberDigit[1];
+    char fourDigit = numberDigit[3];
 
+    if ((numberDigit[0] - numberDigit[4] == 0) && (numberDigit[1] - numberDigit[3] ==0))
+        result = "There is polindrom";
+    else
+    {
+         result = "It's not polindrom";
+    }    
+    return result;
+}
+Console.Write("Input number: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+string treeDigitNumber = TreeDigitNumber(number1);
+Console.WriteLine(treeDigitNumber);
 
-
-
-
-
-
+*/
 
 /*
 Задача 21
@@ -28,6 +46,7 @@ A (3,6,8); B (2,1,-7), -> 15.84
 
 A (7,-5, 0); B (1,-1,9) -> 11.53
 */
+
 /*
 double Dictance(double xa, double xb, double ya, double yb, double zb, double za)
 {

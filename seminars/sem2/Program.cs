@@ -35,8 +35,11 @@ int TwoDigitNumber(int num)
     Console.WriteLine("Number is :" + twoDigitNumber);
 */
 
+
+
 //Задача 3. Напишите программу, котрая принимает на вход число N и проверяет , кратно ли оно одновременно a и b (информация от пользователя.)
 
+/*
 bool MultipleNumber (int number, int a, int b)
 {
     bool result;
@@ -58,3 +61,4 @@ Console.Write("Input the second division: ");
 int b = Convert.ToInt32(Console.ReadLine());
 bool res = MultipleNumber(number, a, b);
 Console.WriteLine(res);
+*/

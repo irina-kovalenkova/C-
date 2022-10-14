@@ -8,6 +8,7 @@
 
 //Решение:
 /*
+Console.Clear();
 double Cub(double A, double B)
 {
     return Math.Pow(A,B);
@@ -31,11 +32,27 @@ Console.WriteLine(Cub(A,B));
 
 9012 -> 12
 */
+//Решение:
+/*
+Console.Clear();
+int SumOfDigits(int num) 
+{
+    int res = 0;
+    if (num < 0) num *= -1;
 
+    while (num > 0)
+    {
+        res += num % 10;
+        num /= 10;
+    }
 
+    return res;
+}
+    Console.Write("Enter a number: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($"The sum of the digits of the number {number} is {SumOfDigits(number)}.");
 
-
-
+*/
 
 /*
 Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
@@ -46,6 +63,7 @@ m = 3 -> [6, 1, 33]
 */
 //Решение:
 /*
+Console.Clear();
 int []CreateRandomArray(int size, int minValue, int maxValue)
 {
     int[]newArray = new int[size];
@@ -61,7 +79,7 @@ Console.Write(array[i] + " ");
 Console.WriteLine();
 }
 
-Console.Write("Input a number of elements: ");
+Console.Write("Input a quantity of elements: ");
 int size = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Input a min of elements: ");
@@ -75,6 +93,8 @@ ShowArray(myArray);
 
 */
 
+//Задача дополнительная
 
+//Решение:
 
 

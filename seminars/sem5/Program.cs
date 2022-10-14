@@ -1,6 +1,7 @@
 ﻿//Задача 1. Задайте массив из 12 элементов, заполненный случайными числами из промежутка 
 //[-9,9]. Найдите сумму отрицательных и положительных элементов массива.
 
+/*
 int []CreateArray(int size)
 {
     int[]array = new int [size];
@@ -40,11 +41,46 @@ int[] myArray = CreateArray(size);
 int result = SumOfNegatives(myArray);
 ShowArray(myArray);
 Console.WriteLine("Sum of a negative elements is" + result);
+*/
+
+//Задача 2. Напишите программу замена элементов массива: положительные 
+//элементы замените на соответствующие отрицательные и наоборот
+// [-4, -8, 8, 2] -> [4, 8, -8, -2]
+
+int CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int [size];
+    for (int i = 0; i < size; i ++)
+    newArray[i] = new Random().Next(minValue, maxValue +1);
+    return newArray;
+}
+
+int[]ReversedArray(int[]array)
+{
+    for (int i = 0; i < array.Length; i ++)
+
+    {
+        array[i] = array[i] * -1;
+    }
+    return array;
+}
 
 
 
 
 
+
+
+//Задача 3. Задайте массив. Напишите программу, которая определяет, 
+//присутствует ли заданное число в массиве.
+
+
+
+
+
+
+//Задача 4. Задайте одномерный массив из 12 случайных чисел. Найдите
+//количество элементов массива, значения которых лежат в отрезке [10, 99]
 
 
 

@@ -111,9 +111,8 @@ int []CreateRandomArray(int size, int minValue, int maxValue)
 {
     int[]newArray = new int[size];
 
-    if(size <= 0) (size = 1);
+   
 
-    
     for (int i = 0; i < size; i ++)
     newArray[i] = new Random().Next(minValue, maxValue + 1);
     return newArray;

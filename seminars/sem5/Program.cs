@@ -102,7 +102,7 @@ void ShowArray(int[]array)
     Console.WriteLine();
 }
 
-int[] ReversedArray(int[]array)
+/* int[] ReversedArray(int[]array)
 {
     for (int i = 0; i < array.Length; i ++)
 
@@ -111,6 +111,7 @@ int[] ReversedArray(int[]array)
     }
     return array;
 }
+*/
 bool Find (int num, int []array)
 {
     bool find = false;

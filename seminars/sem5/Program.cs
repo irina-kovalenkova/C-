@@ -46,16 +46,25 @@ Console.WriteLine("Sum of a negative elements is" + result);
 //Задача 2. Напишите программу замена элементов массива: положительные 
 //элементы замените на соответствующие отрицательные и наоборот
 // [-4, -8, 8, 2] -> [4, 8, -8, -2]
-
-int CreateRandomArray(int size, int minValue, int maxValue)
+/*
+int[]CreateRandomArray(int size, int minValue, int maxValue)
 {
-    int[] newArray = new int [size];
+    int[]newArray = new int [size];
     for (int i = 0; i < size; i ++)
+    {
     newArray[i] = new Random().Next(minValue, maxValue +1);
-    return newArray;
+    }
+       return newArray;
 }
 
-int[]ReversedArray(int[]array)
+void ShowArray(int[]array)
+{
+    for (int i = 0; i < array.Length; i ++)
+    Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int[] ReversedArray(int[]array)
 {
     for (int i = 0; i < array.Length; i ++)
 
@@ -65,18 +74,64 @@ int[]ReversedArray(int[]array)
     return array;
 }
 
+int [] myArray = CreateRandomArray(5, -100, 100);
+ShowArray(myArray);
 
-
-
-
-
+int[] reversed = ReversedArray(myArray);
+ShowArray(reversed);
+*/
 
 //Задача 3. Задайте массив. Напишите программу, которая определяет, 
 //присутствует ли заданное число в массиве.
 
 
+int[]CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[]newArray = new int [size];
+    for (int i = 0; i < size; i ++)
+    {
+    newArray[i] = new Random().Next(minValue, maxValue +1);
+    }
+       return newArray;
+}
 
+void ShowArray(int[]array)
+{
+    for (int i = 0; i < array.Length; i ++)
+    Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
 
+int[] ReversedArray(int[]array)
+{
+    for (int i = 0; i < array.Length; i ++)
+
+    {
+        array[i] = array[i] * -1;
+    }
+    return array;
+}
+bool Find (int num, int []array)
+{
+    bool find = false;
+    for (int i = 0; i > array.Length; i ++)
+    {
+        if (array[i] == num)
+        {
+            find = true;
+            break;
+        }
+    }
+    return find;
+}
+Console.WriteLine("Input size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input number to find: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int[] newArray = CreateRandomArray(size, -10, 10);
+bool find = Find(number, newArray);
+ShowArray(newArray);
+Console.WriteLine($"Число {number} содержится в нашем массиве. Это {find}"); 
 
 
 //Задача 4. Задайте одномерный массив из 12 случайных чисел. Найдите

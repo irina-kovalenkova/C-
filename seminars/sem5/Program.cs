@@ -112,6 +112,7 @@ void ShowArray(int[]array)
     return array;
 }
 */
+/*
 bool Find (int num, int []array)
 {
     bool find = false;
@@ -133,11 +134,27 @@ int[] newArray = CreateRandomArray(size, -10, 10);
 bool find = Find(number, newArray);
 ShowArray(newArray);
 Console.WriteLine($"Число {number} содержится в нашем массиве. Это {find}"); 
-
+*/
 
 //Задача 4. Задайте одномерный массив из 12 случайных чисел. Найдите
 //количество элементов массива, значения которых лежат в отрезке [10, 99]
 
+
+int minValue = 10;
+int maxValue = 99;
+int Count (int[]array, int minValue, int maxValue)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i ++)
+    {
+        if (array[i] >= minValue && array[i] <= maxValue) count ++;
+    }
+    return count;
+}
+int[] arrayToFind = CreateRandomArray(12, -100, 150);
+ShowArray(arrayToFind);
+int count = Count(arrayToFind, minValue, maxValue);
+Console.WriteLine(count);
 
 
 

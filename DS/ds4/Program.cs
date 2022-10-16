@@ -63,6 +63,7 @@ m = 3 -> [6, 1, 33]
 */
 //Решение:
 /*
+
 Console.Clear();
 int []CreateRandomArray(int size, int minValue, int maxValue)
 {
@@ -96,5 +97,42 @@ ShowArray(myArray);
 //Задача дополнительная
 
 //Решение:
+/*
+Console.Clear();
+int []CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[]newArray = new int[size];
+    for (int i = 0; i < size; i ++)
+   
 
+    newArray[i] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
 
+void ShowArray(int[]array)
+{
+    for(int i = 0; i < array.Length; i ++)
+
+Console.Write(array[i] + " ");
+Console.WriteLine();
+}
+
+Console.Write("Input a quantity of elements: ");
+int size = Convert.ToInt32(Console.ReadLine());
+while (size <= 0)
+    {
+      Console.WriteLine("Mistake! Input a positive quentity!");
+      Console.WriteLine(" Input a positive quentity!");
+      size = Convert.ToInt32(Console.ReadLine());
+                }
+
+Console.Write("Input a min of elements: ");
+int min = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input a max of elements: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[]myArray = CreateRandomArray(size, min, max);
+ShowArray(myArray);
+
+*/

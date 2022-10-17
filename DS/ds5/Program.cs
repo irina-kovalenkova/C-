@@ -117,33 +117,34 @@ Console.WriteLine($"Сумма элементов, стоящих на нече�
 */
 /*
 Console.Clear();
-int []CreateRandomArray(int size, int minValue, int maxValue)
+double []CreateRandomArray(int size)
 {
-    int[]newArray = new int [size];
+    double[]newArray = new double [size];
     for (int i = 0; i < size; i ++)
     {
-    newArray[i] = new Random().Next(minValue, maxValue +1);
+    Console.Write($"Input number: ");
+    newArray[i] = Convert.ToDouble(Console.ReadLine());
     }
        return newArray;
 }
 
-void ShowArray(int[]array)
+void ShowArray(double[]array)
 {
     for (int i = 0; i < array.Length; i ++)
     Console.Write(array[i] + " ");
     Console.WriteLine();
 }
 
-int MinMaxElement(int[]array)
+double MinMaxElement(double[]array)
 {
-    int minNum = array[0];
+    double minNum = array[0];
     for(int i = 0; i < array.Length; i ++)
     {
         if (array[i] < minNum) 
         minNum = array[i];
            }
     
-    int maxNum = array[0];
+    double maxNum = array[0];
     for(int i = 0; i < array.Length; i ++)
     {
         if (array[i] > maxNum) 
@@ -156,14 +157,7 @@ int MinMaxElement(int[]array)
 Console.WriteLine("Input size array: ");
 int size = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Input min number in the array: ");
-int minValue = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Input max number in the array: ");
-int maxValue = Convert.ToInt32(Console.ReadLine());
-
-
-int [] myArray = CreateRandomArray(size, minValue, maxValue);
+double [] myArray = CreateRandomArray(size);
 ShowArray(myArray);
 Console.WriteLine($"The difference between the maximum and minimum element is: {MinMaxElement(myArray)}");
 

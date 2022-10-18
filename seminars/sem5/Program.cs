@@ -128,8 +128,10 @@ bool Find (int num, int []array)
 }
 Console.WriteLine("Input size of array: ");
 int size = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine("Input number to find: ");
 int number = Convert.ToInt32(Console.ReadLine());
+
 int[] newArray = CreateRandomArray(size, -10, 10);
 bool find = Find(number, newArray);
 ShowArray(newArray);

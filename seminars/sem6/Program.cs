@@ -19,7 +19,7 @@ int []CreateArray(int size)
 }
 */
 
-
+/*
 
 void ShowArray(int[]array)
 {
@@ -48,7 +48,7 @@ int max = Convert.ToInt32(Console.ReadLine());
        return array;
 }
 
-
+*/
 
 //int[] myArray = CreateRandomArray();
 //ShowArray(myArray);
@@ -124,7 +124,7 @@ ShowArray(arrTask2);
 
 
 //Задача 4. Не использую рекрусию необходимо вывести первые N чисел Фибоначчи. Первые два: a и b задает пользователь.
-
+/*
 int [] Fibonacci(int n, int a, int b)
 {
     int[]fibArray = new int[n];
@@ -145,3 +145,4 @@ Console.Write("Введите размер ряда Фибоначчи: ");
 
  int[]arrTask3 = Fibonacci(fibN, fibA, fibB);
  ShowArray(arrTask3);
+ */

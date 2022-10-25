@@ -139,7 +139,7 @@ Show2dArray(myArray);
 */
 
 //Задача 4. Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами (0,0), (1,1) и т.д.)
-
+/*
 int [,] CreateRandom2dArray()
 
 {
@@ -187,3 +187,5 @@ int SumInHeadDiag(int[,]array)
     Show2dArray(myArray);
     int res = SumInHeadDiag(myArray);
     Console.WriteLine($"{res}");
+
+    */

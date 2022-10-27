@@ -32,7 +32,6 @@ double [,] CreateRandom2dArray()
         }        return array;
     }
 
-
 void Show2dArray(double[,]array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -42,6 +41,7 @@ void Show2dArray(double[,]array)
         Console.WriteLine();
     }
 }
+
 
 double[,]myArray = CreateRandom2dArray();
 Show2dArray(myArray);
@@ -60,6 +60,62 @@ Show2dArray(myArray);
 1 7 -> числа с такими индексами в массиве нет
 
 */
+/*
+int[,] CreateRandom2Array()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+    return array;
+}
+
+void Show2Array(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+void ElementSearch(int[,] array)
+{
+    Console.Write("Input an index 'i' of element: ");
+    int i = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input an index 'j' of element: ");
+    int j = Convert.ToInt32(Console.ReadLine());
+    if ((i >= 0 && i < array.GetLength(0)) && (j >= 0 && j < array.GetLength(1)))
+        Console.WriteLine($"Element with indexes [{i},{j}] = {array[i, j]}");
+    else
+        Console.WriteLine("There is no element with such an indexes.");
+}
+
+int[,] myArray = CreateRandom2Array();
+Show2Array(myArray);
+ElementSearch(myArray);
+
+*/
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -72,65 +128,64 @@ Show2dArray(myArray);
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
 
-int [,] CreateRandom2dArray()
-
+/*
+int[,] CreateRandom2Array()
 {
     Console.Write("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
-
     Console.Write("Input a number of columns: ");
     int columns = Convert.ToInt32(Console.ReadLine());
-
     Console.Write("Input a min possible value: ");
     int minValue = Convert.ToInt32(Console.ReadLine());
-
     Console.Write("Input a max possible value: ");
     int maxValue = Convert.ToInt32(Console.ReadLine());
 
-    int[,] array = new int [rows, columns];
+    int[,] array = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+    return array;
+}
 
-    for(int i = 0; i < rows; i ++)
-    {
-        for (int j = 0; j < columns; j ++)
-                array[i,j] = new Random().Next(minValue, maxValue + 1);
-        }        return array;
-    }
-
-
-void Show2dArray(int[,]array)
+void Show2Array(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j ++)
-        Console.Write(array[i,j] + " ");
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+
         Console.WriteLine();
     }
 }
 
-int Average(int [,]array)
+int[,] myArray = CreateRandom2Array();
+Show2Array(myArray);
+
+double[] ArithmeticMean(int[,] array)
 {
-    int av = 0;
-    int sum = 0;
-    for (int i = 0; i < array.GetLength(0) && j=0; j < array.GetLength(1));
-    sum = sum + array[i , j ];
+
+    double[] newarray = new double[array.GetLength(1)];
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        double sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+            sum = sum + array[i, j];
+        newarray[j] = Math.Round((sum / array.GetLength(0)), 1);
+    }
+    return newarray;
 }
 
-
-
-int[,]myArray = CreateRandom2dArray();
-Show2dArray(myArray);
-
-//
-int SumInHeadDiag(int[,]array)
+void ShowArray(double[] array)
 {
-    int sum = 0;
-    for(int i = 0; i < array.GetLength(0) && i < array.GetLength(1); i ++)
+    Console.Write("New Arithmetic mean array:  ");
+    for (int i = 0; i < array.Length; i++)
     {
-        sum = sum + array[i,i];
+        Console.Write(array[i] + " ; ");
     }
-    return sum;
-    }
-    int [,] myArray = CreateRandom2dArray();
-    Show2dArray(myArray);
-    int res = SumInHeadDiag(myArray);
-    Console.WriteLine($"{res}");
+}
+
+double[] newarray = ArithmeticMean(myArray);
+ShowArray(newarray);
+
+*/
+

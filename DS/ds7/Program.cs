@@ -42,7 +42,6 @@ void Show2dArray(double[,]array)
     }
 }
 
-
 double[,]myArray = CreateRandom2dArray();
 Show2dArray(myArray);
 
@@ -85,7 +84,6 @@ void Show2Array(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
             Console.Write(array[i, j] + " ");
-
         Console.WriteLine();
     }
 }
@@ -107,16 +105,6 @@ Show2Array(myArray);
 ElementSearch(myArray);
 
 */
-
-
-
-
-
-
-
-
-
-
 
 /*
 Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
@@ -153,7 +141,6 @@ void Show2Array(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
             Console.Write(array[i, j] + " ");
-
         Console.WriteLine();
     }
 }

@@ -1,6 +1,8 @@
 ﻿//Задача 1. Задайте двумерный массив. напишите программу, которая заменяет
 //строки на столбцы. В случае, если это невозможно, программа должна вывести сообщение для пользователя.
 
+/*
+
 int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -30,6 +32,8 @@ void Print2DArrayInt(int[,] array)
     }
     Console.WriteLine();
 }
+
+*/
 
 /*
 

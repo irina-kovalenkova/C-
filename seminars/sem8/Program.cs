@@ -78,7 +78,7 @@ Print2DArrayInt(myArray);
 //Задача 3. Из двумерного массива целых чисел удалить строку и столбец, 
 //на пересечении которых расположен наименьший элемент.
 
-
+/*
 int[,] FindMinInArray(int[,] array)
 {
     int min = array[0, 0];
@@ -123,3 +123,7 @@ int[,] myArray = Create2DArrayRandomInt(4,5,1,9);
 Print2DArrayInt(myArray);
 int [,] newArray = FindMinInArray(myArray);
 Print2DArrayInt(newArray);
+
+*/
+
+

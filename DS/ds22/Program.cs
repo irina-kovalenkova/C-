@@ -212,7 +212,7 @@ ShowCoordin(result);
 
 */
 
-
+/*
 
 
 int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
@@ -248,7 +248,7 @@ void Print2DArrayInt(int[,] array)
 
 
 
-
+*/
 
 
 

@@ -58,7 +58,7 @@ Print2DArrayInt(myArray);
 //Задача 2. Задайте двумерный массив. Напишите программу, которая
 //поменяет местами первую и последнюю строку массива
 
-
+/*
 void RowsColumnsChangeArray(int[,] array)
  {
     for(int j = 0; j < array.GetLength(1); j++)
@@ -73,7 +73,53 @@ Print2DArrayInt(myArray);
 RowsColumnsChangeArray(myArray);
 Print2DArrayInt(myArray);
   
-
+*/
 
 //Задача 3. Из двумерного массива целых чисел удалить строку и столбец, 
 //на пересечении которых расположен наименьший элемент.
+
+
+int[,] FindMinInArray(int[,] array)
+{
+    int min = array[0, 0];
+    int iMin = 0;
+    int jMin = 0;
+
+    for(int i = 0; i < array.GetLength(0); i++)
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i,j] < min)
+            {
+                iMin = i;
+                jMin = j;
+                min = array[i,j];
+            } 
+        }
+
+    int[,] newArray = new int[array.GetLength(0)-1, array.GetLength(1)-1];
+        
+        for (int i=0, m=0; i< array.GetLength(0); i++, m++)
+        {
+           if (i == iMin)
+           {
+                m --; 
+                continue;
+           }
+            for (int j=0, n=0; j< array.GetLength(1); j++, n++)
+            {
+                if (j == jMin) 
+                {
+                    n--;
+                    continue;
+                }
+                newArray[m,n] = array[i,j];
+            }
+        }
+    return newArray;
+}
+
+
+int[,] myArray = Create2DArrayRandomInt(4,5,1,9);
+Print2DArrayInt(myArray);
+int [,] newArray = FindMinInArray(myArray);
+Print2DArrayInt(newArray);

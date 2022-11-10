@@ -175,6 +175,8 @@ Console.Write("Введите размер ряда Фибоначчи: ");
 //x = -0,5
 //y = 5*(-0,5)+2 = -0,5
 
+/*
+
 double[] Coordinate(double b1, double b2, double k1, double k2)
 
 {
@@ -208,6 +210,40 @@ double k2 = Convert.ToDouble(Console.ReadLine());
 double[] result = Coordinate(b1, b2, k1, k2);
 ShowCoordin(result);
 
+*/
+
+
+
+
+int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array = new int[rows, columns];
+    for (int i = 0; i < rows; i ++)
+    {
+        for (int j = 0; j < columns; j ++)
+        {
+            array[i, j] = new Random().Next(minValue, maxValue+1);
+        }
+    }
+    return array;
+}
+
+void Print2DArrayInt(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0);i++)
+    {
+        for (var j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j]);
+            if (j< array.GetLength(1)- 1)
+            Console.Write(",");
+        }
+        if (i<array.GetLength(0)-1)
+        Console.WriteLine(",");
+        else Console.WriteLine(".");
+    }
+    Console.WriteLine();
+}
 
 
 

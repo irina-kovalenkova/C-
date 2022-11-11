@@ -181,16 +181,15 @@ if (array1.GetLength(0) == array2.GetLength(1))
    
 else
 {
-    Console.WriteLine("Это не то. ");
-    return null;
-  }
-
+    Console.WriteLine("Это не то. Количество строк в первой матрице должно совпадать с количеством столбцов во второй. Срочно исправьте!");
+    return newArray;
+}
 }
 
 int[,] myArray1 = Create2DArrayRandomInt(3,2,1,9);
 Print2DArrayInt(myArray1);
 
-int[,] myArray2 = Create2DArrayRandomInt(3,2,1,9);
+int[,] myArray2 = Create2DArrayRandomInt(2,3,1,9);
 Print2DArrayInt(myArray2);
 Console.WriteLine();
 int[,] resultArray = CreatNewArray(myArray1, myArray2);

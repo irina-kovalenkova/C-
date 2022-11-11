@@ -12,9 +12,65 @@
 */
 
 
+int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array = new int[rows, columns];
+    for (int i = 0; i < rows; i ++)
+    {
+        for (int j = 0; j < columns; j ++)
+        {
+            array[i, j] = new Random().Next(minValue, maxValue+1);
+        }
+    }
+    return array;
+}
 
+void Print2DArrayInt(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0);i++)
+    {
+        for (var j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j]);
+            if (j< array.GetLength(1)- 1)
+            Console.Write(",");
+        }
+        if (i<array.GetLength(0)-1)
+        Console.WriteLine(",");
+        else Console.WriteLine(".");
+    }
+    Console.WriteLine();
+}
 
+/*
+int [,]NewDecreasingArray(int [,]array)
+{
+    for (int i =0; i < array.GetLength(0); i++)
+    {
+        for ( int j = 0; j < array.GetLength(1); j++)
+        {
+          for (int k = j +1; k < array.GetLength(0); k++)
+          {
+            if(array[i, k] > array[i, j] )
+            {
+                int temp = array[i, k];
+                array[i, k] = array[i, j];
+                array[i, j] = temp;
+        }
+        }
+        }
+    }
+    return array;
+}
+*/
 
+/*
+int[,] newArray = Create2DArrayRandomInt(5,5,1,9);
+Print2DArrayInt(newArray);
+Console.WriteLine();
+int[,] NewNewArray = NewDecreasingArray(newArray);
+Print2DArrayInt(NewNewArray);
+*/
 
 /*
 Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
@@ -34,10 +90,28 @@
 */
 
 
+int[] SumNewArray(int[,] array)
+{
+    int[] sumArray = new int[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sum = sum + array[i, j];
+            sumArray[i] = sum;
+        }
+    }
+    return sumArray;
+}
 
+int[,] myArray = Create2DArrayRandomInt(5,5,1,9);
+Print2DArrayInt(myArray);
+Console.WriteLine();
 
+int[] sumArray = SumNewArray(myArray);
 
-
+Console.WriteLine(sumArray);
 
 
 
@@ -54,10 +128,73 @@
 15 18
 */
 
+/*
+int[,] CreateArray1(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array1 = new int[rows, columns];
+    for (int i = 0; i < rows; i ++)
+    {
+        for (int j = 0; j < columns; j ++)
+        {
+            array1[i, j] = new Random().Next(minValue, maxValue+1);
+        }
+    }
+    return array1;
+}
 
 
+int[,] CreateArray2(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] array2 = new int[rows, columns];
+    for (int n = 0; n < rows; n ++)
+    {
+        for (int m = 0; m < columns; m ++)
+        {
+            array2[n, m] = new Random().Next(minValue, maxValue+1);
+        }
+    }
+    return array2;
+}
+
+*/
 
 
+int[,] CreatNewArray(int[,] array1, int[,] array2)
+{
+    var newArray = new int [array1.GetLength(0), array2.GetLength(1)];
+if (array1.GetLength(0) == array2.GetLength(1))
+  {
+        for (int i = 0; i < array1.GetLength(0); i++)
+        {
+            for (int j = 0; j < array2.GetLength(1); j++)
+            {
+                newArray[i, j] = 0;
+                for (int k = 0; k < array2.GetLength(0); k++)
+                {
+                    newArray[i, j] += array1[i, k] * array2[k, j];
+                }
+            }
+        }
+        return newArray;
+    }
+
+   
+else
+{
+    Console.WriteLine("Это не то. ");
+    return null;
+  }
+
+}
+
+int[,] myArray1 = Create2DArrayRandomInt(3,2,1,9);
+Print2DArrayInt(myArray1);
+
+int[,] myArray2 = Create2DArrayRandomInt(3,2,1,9);
+Print2DArrayInt(myArray2);
+Console.WriteLine();
+int[,] resultArray = CreatNewArray(myArray1, myArray2);
+Print2DArrayInt(resultArray);
 
 
 /*

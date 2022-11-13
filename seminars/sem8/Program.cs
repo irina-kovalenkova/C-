@@ -51,7 +51,7 @@ void ChangeArray(int[,] array)
 
     }
     else
-    Console.WriteLine("It/s impussible!!!");
+    Console.WriteLine("It's impussible!!!");
 }
 
 int[,] myArray = Create2DArrayRandomInt(5,5,1,9);

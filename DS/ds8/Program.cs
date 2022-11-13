@@ -11,7 +11,7 @@
 
 */
 
-
+/*
 int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -42,7 +42,6 @@ void Print2DArrayInt(int[,] array)
     Console.WriteLine();
 }
 
-/*
 int [,]NewDecreasingArray(int [,]array)
 {
     for (int i =0; i < array.GetLength(0); i++)
@@ -62,9 +61,7 @@ int [,]NewDecreasingArray(int [,]array)
     }
     return array;
 }
-*/
 
-/*
 int[,] newArray = Create2DArrayRandomInt(5,5,1,9);
 Print2DArrayInt(newArray);
 Console.WriteLine();
@@ -88,35 +85,45 @@ Print2DArrayInt(NewNewArray);
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
 */
-
-
+/*
 int[] SumNewArray(int[,] array)
 {
-    int[] sumArray = new int[array.GetLength(0)];
-    for (int i = 0; i < array.GetLength(0); i++)
+    int[] sumArray = new int[array.GetLength(1)];
+    for (int j = 0; j < array.GetLength(1); j++)
     {
         int sum = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
             sum = sum + array[i, j];
-            sumArray[i] = sum;
+            sumArray[j] = sum;
         }
     }
     return sumArray;
-}
+   }
 
-int[,] myArray = Create2DArrayRandomInt(5,5,1,9);
+int[,] myArray = Create2DArrayRandomInt(4,4,1,9);
 Print2DArrayInt(myArray);
 Console.WriteLine();
 
+int IndexMinElements(int[] array)
+{
+    int iMin = 0;
+    int min = array[iMin];
+    for (int i = 1; i < array.Length - 1; i++)
+    {
+        if (array[i] < min)
+        {
+            min = array[i];
+            iMin = i;
+        }
+    }
+    return iMin;
+}
 int[] sumArray = SumNewArray(myArray);
+int numbRows = (IndexMinElements(sumArray) + 1);
+Console.WriteLine($"Номер строки с наименьшей суммой элементов : {numbRows}");
 
-Console.WriteLine(sumArray);
-
-
-
-
-
+*/
 
 /*
 Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
@@ -129,36 +136,6 @@ Console.WriteLine(sumArray);
 */
 
 /*
-int[,] CreateArray1(int rows, int columns, int minValue, int maxValue)
-{
-    int[,] array1 = new int[rows, columns];
-    for (int i = 0; i < rows; i ++)
-    {
-        for (int j = 0; j < columns; j ++)
-        {
-            array1[i, j] = new Random().Next(minValue, maxValue+1);
-        }
-    }
-    return array1;
-}
-
-
-int[,] CreateArray2(int rows, int columns, int minValue, int maxValue)
-{
-    int[,] array2 = new int[rows, columns];
-    for (int n = 0; n < rows; n ++)
-    {
-        for (int m = 0; m < columns; m ++)
-        {
-            array2[n, m] = new Random().Next(minValue, maxValue+1);
-        }
-    }
-    return array2;
-}
-
-*/
-
-
 int[,] CreatNewArray(int[,] array1, int[,] array2)
 {
     var newArray = new int [array1.GetLength(0), array2.GetLength(1)];
@@ -177,41 +154,23 @@ if (array1.GetLength(0) == array2.GetLength(1))
         }
         return newArray;
     }
-
-   
 else
 {
-    Console.WriteLine("Это не то. Количество строк в первой матрице должно совпадать с количеством столбцов во второй. Срочно исправьте!");
+    Console.WriteLine("Alarm! Количество строк в первой матрице должно совпадать с количеством столбцов во второй. Срочно исправьте!");
     return newArray;
 }
 }
 
-int[,] myArray1 = Create2DArrayRandomInt(3,2,1,9);
+int[,] myArray1 = Create2DArrayRandomInt(2,2,1,9);
 Print2DArrayInt(myArray1);
 
-int[,] myArray2 = Create2DArrayRandomInt(2,3,1,9);
+int[,] myArray2 = Create2DArrayRandomInt(2,2,1,9);
 Print2DArrayInt(myArray2);
 Console.WriteLine();
 int[,] resultArray = CreatNewArray(myArray1, myArray2);
 Print2DArrayInt(resultArray);
 
-
-/*
-Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-Массив размером 2 x 2 x 2
-66(0,0,0) 25(0,1,0)
-34(1,0,0) 41(1,1,0)
-27(0,0,1) 90(0,1,1)
-26(1,0,1) 55(1,1,1)
-
 */
-
-
-
-
-
-
-
 
 /*
 Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
@@ -222,3 +181,42 @@ Print2DArrayInt(resultArray);
 10 09 08 07
 */
 
+/*
+int[,] ArraySpiral(int rows, int columns)
+{
+        int[,] array = new int[rows, columns];
+
+    for (int operation = 0, current = 1; current <= rows * columns; operation++)
+    {
+        for (int i = operation, j = operation; j < columns - operation; j++, current++) 
+            array[i, j] = current;
+
+        if (current > rows * columns) break;
+        for (int i = operation + 1, j = columns - operation - 1; i < rows - operation; i++, current++) 
+            array[i, j] = current;
+
+        if (current > rows * columns) break;
+        for (int i = rows - operation - 1, j = columns - operation - 2; j >= operation; j--, current++) 
+            array[i, j] = current;
+
+        if (current > rows * columns) break;
+        for (int i = rows - operation - 2, j = 0 + operation; i >= operation + 1; i--, current++) 
+            array[i, j] = current;
+    }
+    return array;
+}
+
+void PrintSpiral(int[,] array, int zeroNum = 2)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j].ToString($"D{zeroNum}") + " "); 
+        Console.WriteLine();
+}
+}
+
+int[,] spiralarr = ArraySpiral(5, 5);
+    PrintSpiral(spiralarr);
+
+   */ 

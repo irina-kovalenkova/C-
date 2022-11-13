@@ -250,7 +250,7 @@ int
 
 */
 
-
+/*
 
 int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
 {
@@ -264,6 +264,9 @@ int[,] Create2DArrayRandomInt(int rows, int columns, int minValue, int maxValue)
     }
     return array;
 }
+
+*/
+/*
 
 void Print2DArrayInt(int[,] array)
 {
@@ -301,13 +304,140 @@ int [,]NewDecreasingArray(int [,]array)
     }
     return array;
 }
+
+*/
+
+/*
+
 int[,] newArray = Create2DArrayRandomInt(9,9,1,9);
 Print2DArrayInt(newArray);
 Console.WriteLine();
 int[,] NewNewArray = NewDecreasingArray(newArray);
 Print2DArrayInt(NewNewArray);
+*/
 
 
 
+int[,] CreateSpiralArray(int rows, int columns)
+{
+    //if (columns == -1) columns = rows; // если не передать значение columns в параметрах, то создастся квадратная матрица
+    int[,] array = new int[rows, columns];
+
+    for (int iteration = 0, current = 1; current <= rows * columns; iteration++)
+    {
+        for (int i = iteration, j = iteration; j < columns - iteration; j++, current++) // заполнение слева направо
+            array[i, j] = current;
+
+        if (current > rows * columns) break;
+        for (int i = iteration + 1, j = columns - iteration - 1; i < rows - iteration; i++, current++) // заполнение сверху вниз
+            array[i, j] = current;
+
+        if (current > rows * columns) break;
+        for (int i = rows - iteration - 1, j = columns - iteration - 2; j >= iteration; j--, current++) // заполнение справа налево
+            array[i, j] = current;
+
+        if (current > rows * columns) break;
+        for (int i = rows - iteration - 2, j = 0 + iteration; i >= iteration + 1; i--, current++) // заполнение снизу вверх
+            array[i, j] = current;
+    }
+    return array;
+}
+/*
+// Красивая печать матрицы с дополнением нулями до fillToSigns знаков и раскрашиванием чисел цветом.
+// Как говорится, лучше один раз увидеть :)
+void PrettyPrint2DArrayInt(int[,] array, int fillToSigns = 2)
+{
+    ConsoleColor[] colors = {ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.Green,
+                            ConsoleColor.Cyan, ConsoleColor.Blue, ConsoleColor.Magenta};
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.ForegroundColor = colors[(j + i) % 6]; // 6 в данном случае длина [] colors (GetLenght не работает)
+            Console.Write(array[i, j].ToString($"D{fillToSigns}") + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.ResetColor();
+}
+*/
+void Print2DArrayInt(int[,] array, int zeroNum = 2)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j].ToString($"D{zeroNum}") + " "); 
+        Console.WriteLine();
+}
+}
 
 
+
+//void Task62()
+//{
+    int[,] task62Array = CreateSpiralArray(4, 4);
+    Print2DArrayInt(task62Array);
+//}
+//Task62();
+
+
+/*
+int[] MakeRandomIntArray(int size, int minValue, int maxValue) // принимает целое число в качестве размера массива, верхнюю и нижнюю границу для генерации чисел, возвращает массив заданного размера, заполненный случайными числами от нижней до верхней границы чисел включительно.
+{
+    int[] array = new int[size];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return array;
+}
+*/
+
+
+/*
+void PrintIntArray(int[] array) // печать массива, состоящего из int элементов
+{
+    Console.Write("{ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i]);
+        if (i < array.Length - 1) // ставим запятую после элемента, если это не последний элемент
+            Console.Write(", ");
+    }
+    Console.WriteLine(" }\n");
+}
+*/
+
+/*
+
+void Sort1DIntArray(int[] array) // сортировка одномерного int массива
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        int max = i;
+        for (int j = i + 1; j < array.GetLength(0); j++)
+            if (array[j] > array[max])
+                max = j;
+        if (max != i)
+        {
+            int temp = array[i];
+            array[i] = array[max];
+            array[max] = temp;
+        }
+    }
+}
+
+*/
+
+/*
+void PrintArraySpiral(int[,] array, int fillZeros = 2)
+{
+        for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j].ToString($"D{fillZeros}") + " "); 
+        Console.WriteLine();
+    }
+}
+*/

@@ -10,8 +10,9 @@ string SunFor (int a, int b)
     if(a <= b) return SunFor(a +1, b) + $"{a} ";
     else return String.Empty;
 }
-
-Console.WriteLine(SunFor(1,8));
+Console.Write("Enter N: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(($"N = {b} -> {SunFor(1,b)}"));
 */
 /*
 Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
